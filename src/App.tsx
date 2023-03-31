@@ -131,7 +131,15 @@ function ProductItem({ hit, components }) {
           <span className="ml-1">{crate.description}</span>
         </p>
         {crate.documentation || crate.homepage || crate.repository ? (
-          <div className="flex space-x-2">
+          <div
+            onMouseEnter={() => {
+              setFocused(true)
+            }}
+            onMouseLeave={() => {
+              setFocused(false)
+            }}
+            className="flex space-x-2"
+          >
             {crate.documentation && (
               <a
                 href={crate.documentation}
